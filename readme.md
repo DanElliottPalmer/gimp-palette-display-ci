@@ -5,7 +5,7 @@
 ## Install
 
 ```
-$ npm install --save gimp-palette-display-ci
+$ npm install --global gimp-palette-display-ci
 ```
 
 ## Usage
