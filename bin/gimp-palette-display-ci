@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+const gimpPaletteParser = require('gimp-palette-parser');
+const displayPalatteData = require('../lib/index');
+
+if (process.stdin.isTTY) {
+  gimpPaletteParser.parseFile(process.argv[2], 'Untitled', (data) => {
+    displayPalatteData(data); 
+  });
+} else {
+  let data = '';
+  process.stdin.setEncoding('utf-8');
+  process.stdin.on('readable', function() {
+    let chunk;
+    while(chunk = process.stdin.read()) {
+      data += chunk;
+    }
+  });
+  process.stdin.on('end', function () {
+    data = data.replace(/\n$/, '');
+    displayPalatteData(gimpPaletteParser.parser('Untitled', data));
+  });
+}

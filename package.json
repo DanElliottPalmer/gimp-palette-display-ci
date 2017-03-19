@@ -1,0 +1,16 @@
+{
+  "name": "gimp-palette-display-ci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ansi": "^0.3.1",
+    "gimp-palette-parser": "^1.0.0"
+  },
+  "bin": {
+    "gimp-palette-display-ci": "./bin/gimp-palette-display-ci"
+  }
+}
